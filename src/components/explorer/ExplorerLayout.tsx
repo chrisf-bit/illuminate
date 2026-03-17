@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Home, User, MessageSquare, Briefcase, StickyNote, RotateCcw } from "lucide-react";
-import type { AssessmentResult, ExplorerTab, PreferenceType } from "@/types";
+import type { AssessmentResult, ExplorerTab } from "@/types";
 import { TYPE_META } from "@/lib/constants";
 import { ScoreChart } from "@/components/results/ScoreChart";
 import { profiles } from "@/data/profiles";

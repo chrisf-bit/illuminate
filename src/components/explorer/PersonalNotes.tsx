@@ -16,7 +16,7 @@ const TABS: { key: NoteTab; label: string }[] = [
 export function PersonalNotes() {
   const [notes, setNotes] = useState<StoredNotes>(loadNotes);
   const [activeTab, setActiveTab] = useState<NoteTab>("general");
-  const saveTimer = useRef<ReturnType<typeof setTimeout>>();
+  const saveTimer = useRef<ReturnType<typeof setTimeout>>(undefined);
 
   const debouncedSave = useCallback((updated: StoredNotes) => {
     if (saveTimer.current) clearTimeout(saveTimer.current);
@@ -43,10 +43,6 @@ export function PersonalNotes() {
       <div className="flex gap-1 mb-3 overflow-x-auto">
         {TABS.map((tab) => {
           const isActive = tab.key === activeTab;
-          const colour =
-            tab.key !== "general"
-              ? TYPE_META[tab.key as keyof typeof TYPE_META].colour
-              : "#01A0B6";
 
           return (
             <button
