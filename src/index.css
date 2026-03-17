@@ -1,0 +1,60 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-teal: #01A0B6;
+  --color-brand-teal-light: #15CBD9;
+  --color-brand-teal-dark: #01606D;
+  --color-brand-pink: #D10980;
+  --color-brand-black: #000000;
+  --color-brand-white: #F2F2F2;
+  --color-brand-grey-light: #B2BFC5;
+  --color-brand-grey-dark: #475059;
+
+  --font-heading: "Questrial", "Century Gothic", sans-serif;
+  --font-body: "Inter", "Century Gothic", sans-serif;
+}
+
+html, body, #root {
+  height: 100dvh;
+  overflow: hidden;
+  background-color: #000000;
+  color: #F2F2F2;
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  overscroll-behavior: none;
+  touch-action: manipulation;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes glow-pulse {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+
+.animate-fade-up {
+  animation: fade-up 0.5s ease-out forwards;
+}
+
+.animate-glow-pulse {
+  animation: glow-pulse 3s ease-in-out infinite;
+}
